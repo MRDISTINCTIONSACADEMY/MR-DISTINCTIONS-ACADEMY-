@@ -53,36 +53,36 @@
             color: white;
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 20px;
         }
         .footer a {
             color: white;
             text-decoration: none;
-            font-size: 1.5em;
+            font-size: 1.2em;
             display: flex;
             align-items: center;
-            gap: 12px;
-            padding: 10px;
-            border-radius: 10px;
+            gap: 8px;
+            padding: 8px;
+            border-radius: 8px;
             transition: background 0.3s, transform 0.2s;
         }
         .footer a:hover {
             background: rgba(255, 255, 255, 0.2);
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
         .footer img {
-            width: 30px;
-            height: 30px;
+            width: 20px;
+            height: 20px;
             transition: transform 0.2s;
         }
         .footer a:hover img {
-            transform: rotate(10deg);
+            transform: rotate(5deg);
         }
     </style>
     <script>
         function login() {
             let password = prompt("Enter password to access Pascal Mr Distinctions' Dashboard:");
-            if (password === "yourpassword") { // Replace "yourpassword" with the actual password
+            if (password === "Pascal Mr Distinctions") {
                 location.href = 'dashboard.html';
             } else {
                 alert("Incorrect password. Access denied.");
