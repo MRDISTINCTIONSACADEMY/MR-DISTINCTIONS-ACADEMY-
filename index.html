@@ -1,76 +1,110 @@
-<style>
-    body {
-        font-family: 'Helvetica', sans-serif;
-        text-align: center;
-        background: white;
-        color: black;
-        margin: 0;
-        padding: 0;
-    }
-    .header {
-        background-color: #004080;
-        color: white;
-        padding: 10px;
-        font-size: 1.8em;
-        font-weight: bold;
-    }
-    .container {
-        padding: 20px;
-    }
-    h1 {
-        font-size: 1.5em;
-        font-weight: bold;
-        color: #004080;
-    }
-    p {
-        font-size: 1em;
-        margin: 10px 0;
-    }
-    .login-button {
-        background-color: #004080;
-        color: white;
-        padding: 8px 16px;
-        border: none;
-        border-radius: 5px;
-        font-size: 0.9em;
-        cursor: pointer;
-        font-weight: bold;
-        font-style: italic;
-        margin-top: 15px;
-    }
-    .login-button:hover {
-        background-color: #002050;
-    }
-    .footer {
-        margin-top: 20px;
-        padding: 10px;
-        background: #004080;
-        color: white;
-        display: flex;
-        justify-content: center;
-        gap: 15px;
-    }
-    .footer a {
-        color: white;
-        text-decoration: none;
-        font-size: 1em;
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        padding: 5px;
-        border-radius: 5px;
-        transition: background 0.3s, transform 0.2s;
-    }
-    .footer a:hover {
-        background: rgba(255, 255, 255, 0.2);
-        transform: scale(1.05);
-    }
-    .footer img {
-        width: 16px;
-        height: 16px;
-        transition: transform 0.2s;
-    }
-    .footer a:hover img {
-        transform: rotate(5deg);
-    }
-</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Mr. Distinctions' Website</title>
+    <style>
+        body {
+            font-family: 'Helvetica', sans-serif;
+            text-align: center;
+            background: white;
+            color: black;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #004080;
+            color: white;
+            padding: 10px;
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+        .container {
+            padding: 20px;
+            max-width: 400px;
+            margin: auto;
+        }
+        h1 {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #004080;
+        }
+        p {
+            font-size: 1em;
+            margin: 10px 0;
+        }
+        .login-button {
+            background-color: #004080;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            font-size: 0.9em;
+            cursor: pointer;
+            font-weight: bold;
+            font-style: italic;
+            margin-top: 15px;
+        }
+        .login-button:hover {
+            background-color: #002050;
+        }
+        .footer {
+            margin-top: 20px;
+            padding: 10px;
+            background: #004080;
+            color: white;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        .footer a {
+            color: white;
+            text-decoration: none;
+            font-size: 1em;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 5px;
+            border-radius: 5px;
+            transition: background 0.3s, transform 0.2s;
+        }
+        .footer a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+        .footer img {
+            width: 16px;
+            height: 16px;
+            transition: transform 0.2s;
+        }
+        .footer a:hover img {
+            transform: rotate(5deg);
+        }
+    </style>
+    <script>
+        function login() {
+            location.href = 'dashboard.html'; // Redirects without a password
+        }
+    </script>
+</head>
+<body>
+    <div class="header">Welcome to Mr. Distinctions' Website</div>
+    <div class="container">
+        <h1>We are here to simplify your academic journey.</h1>
+        <p>Our goal is to enable you to get Distinctions in all your subjects!</p>
+        <button class="login-button" onclick="login()">LOGIN</button>
+    </div>
+    <div class="footer">
+        <a href="https://youtube.com/@mrdistinctionsacademy?si=nwn5td35HBa_rcgX" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube"> YouTube
+        </a>
+        <a href="https://wa.me/260976975898" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"> WhatsApp
+        </a>
+        <a href="mailto:pascalkaunda60@gmail.com">
+            <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email"> Email
+        </a>
+    </div>
+</body>
+</html>
