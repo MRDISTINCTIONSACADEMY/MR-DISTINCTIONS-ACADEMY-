@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,7 +31,7 @@
             font-size: 1.2em;
             margin: 20px 0;
         }
-        .dashboard-button {
+        .login-button {
             background-color: #004080;
             color: white;
             padding: 10px 20px;
@@ -41,9 +40,10 @@
             font-size: 1em;
             cursor: pointer;
             font-weight: bold;
+            font-style: italic;
             margin-top: 20px;
         }
-        .dashboard-button:hover {
+        .login-button:hover {
             background-color: #002050;
         }
         .footer {
@@ -53,7 +53,7 @@
             color: white;
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 30px;
         }
         .footer a {
             color: white;
@@ -61,20 +61,41 @@
             font-size: 1.5em;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+            padding: 10px;
+            border-radius: 10px;
+            transition: background 0.3s, transform 0.2s;
+        }
+        .footer a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.1);
         }
         .footer img {
-            width: 24px;
-            height: 24px;
+            width: 30px;
+            height: 30px;
+            transition: transform 0.2s;
+        }
+        .footer a:hover img {
+            transform: rotate(10deg);
         }
     </style>
+    <script>
+        function login() {
+            let password = prompt("Enter password to access Pascal Mr Distinctions' Dashboard:");
+            if (password === "yourpassword") { // Replace "yourpassword" with the actual password
+                location.href = 'dashboard.html';
+            } else {
+                alert("Incorrect password. Access denied.");
+            }
+        }
+    </script>
 </head>
 <body>
     <div class="header">Welcome to Mr. Distinctions' Website</div>
     <div class="container">
         <h1>We are here to simplify your academic journey.</h1>
         <p>Our goal is to enable you to get Distinctions in all your subjects!</p>
-        <button class="dashboard-button" onclick="location.href='dashboard.html'">Go to Dashboard</button>
+        <button class="login-button" onclick="login()">LOGIN</button>
     </div>
     <div class="footer">
         <a href="https://youtube.com/@mrdistinctionsacademy?si=nwn5td35HBa_rcgX" target="_blank">
