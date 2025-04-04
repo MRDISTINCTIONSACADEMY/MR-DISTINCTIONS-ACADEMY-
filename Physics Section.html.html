@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics Made Easy Videos</title>
+    <style>
+        /* Basic styles for the video section */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 2rem;
+        }
+        .video-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .video-card {
+            width: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            border: 2px solid #4CAF50;
+            transition: transform 0.3s ease;
+        }
+        .video-card:hover {
+            transform: scale(1.05);
+        }
+        .video-card iframe {
+            width: 100%;
+            height: 200px;
+        }
+        .video-card h3 {
+            padding: 15px;
+            background-color: #ff6347;
+            color: white;
+            font-size: 1.2rem;
+            margin: 0;
+            text-align: center;
+        }
+        .video-card p {
+            padding: 10px;
+            font-size: 1rem;
+            color: #555;
+            background-color: #f9f9f9;
+        }
+        .video-card p:hover {
+            background-color: #e6f7ff;
+        }
+        .author {
+            font-size: 1.2rem;
+            font-weight: bold;
+            font-style: italic;
+            margin-top: 10px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section with Bold and Italic Text -->
+    <header>
+        <strong><em>PHYSICS MADE EASY</em></strong>
+        <div class="author">
+            <strong><em>BY PASCAL MR DISTINCTIONS</em></strong>
+        </div>
+    </header>
+
+    <!-- Video Section -->
+    <section class="video-section">
+        <!-- Video Card 1 (YouTube Embed) -->
+        <div class="video-card">
+            <h3>Introduction to Physics</h3>
+            <iframe src="https://www.youtube.com/embed/yXtBiunZC40?si=jcjA3CzfEu0JYzix" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <p>Get started with the basics of Physics, the science of matter, motion, and energy.</p>
+        </div>
+
+        <!-- Video Card 2 (Example of another YouTube Embed) -->
+        <div class="video-card">
+            <h3>Newton's Laws of Motion</h3>
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <p>Learn about Newton's Three Laws of Motion, fundamental to understanding how objects move.</p>
+        </div>
+
+        <!-- Video Card 3 (Example of another YouTube Embed) -->
+        <div class="video-card">
+            <h3>Energy and Work</h3>
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <p>Explore the concepts of energy, work, and how they relate to the motion of objects.</p>
+        </div>
+    </section>
+
+</body>
+</html>
