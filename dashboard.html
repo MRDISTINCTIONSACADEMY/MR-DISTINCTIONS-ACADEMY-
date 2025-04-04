@@ -13,6 +13,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+            flex-direction: column;
         }
         .dashboard {
             display: grid;
@@ -44,9 +45,57 @@
             border-radius: 5px;
             cursor: pointer;
         }
+        /* Video section hidden by default */
+        #videoSection {
+            display: none;
+            padding: 20px;
+            background-color: #f0f8ff;
+            width: 100%;
+            max-width: 1200px;
+            margin-top: 20px;
+        }
+        .video-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .video-card {
+            width: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            border: 2px solid #4CAF50;
+            transition: transform 0.3s ease;
+        }
+        .video-card:hover {
+            transform: scale(1.05);
+        }
+        .video-card iframe {
+            width: 100%;
+            height: 200px;
+        }
+        .video-card h3 {
+            padding: 15px;
+            background-color: #ff6347;
+            color: white;
+            font-size: 1.2rem;
+            margin: 0;
+            text-align: center;
+        }
+        .video-card p {
+            padding: 10px;
+            font-size: 1rem;
+            color: #555;
+            background-color: #f9f9f9;
+        }
     </style>
 </head>
 <body>
+
+    <!-- Dashboard Section -->
     <div class="dashboard">
         <div class="card">
             <h2>English</h2>
@@ -67,7 +116,7 @@
         <div class="card">
             <h2>Science</h2>
             <div class="buttons">
-                <button><i class="fas fa-video"></i> Videos</button>
+                <button id="showVideosBtn"><i class="fas fa-video"></i> Videos</button>
                 <button><i class="fas fa-question-circle"></i> Quizzes</button>
                 <button><i class="fas fa-file"></i> Documents</button>
             </div>
@@ -81,5 +130,42 @@
             </div>
         </div>
     </div>
+
+    <!-- Video Section (Initially Hidden) -->
+    <div id="videoSection">
+        <header>
+            <strong><em>PHYSICS MADE EASY</em></strong>
+            <div class="author">
+                <strong><em>BY PASCAL MR DISTINCTIONS</em></strong>
+            </div>
+        </header>
+
+        <section class="video-section">
+            <div class="video-card">
+                <h3>Introduction to Physics</h3>
+                <iframe src="https://www.youtube.com/embed/yXtBiunZC40?si=jcjA3CzfEu0JYzix" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <p>Get started with the basics of Physics, the science of matter, motion, and energy.</p>
+            </div>
+
+            <div class="video-card">
+                <h3>Newton's Laws of Motion</h3>
+                <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <p>Learn about Newton's Three Laws of Motion, fundamental to understanding how objects move.</p>
+            </div>
+
+            <div class="video-card">
+                <h3>Energy and Work</h3>
+                <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <p>Explore the concepts of energy, work, and how they relate to the motion of objects.</p>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // When the Science button is clicked, show the video section
+        document.getElementById('showVideosBtn').addEventListener('click', function() {
+            document.getElementById('videoSection').style.display = 'block';
+        });
+    </script>
 </body>
 </html>
