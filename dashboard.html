@@ -1,171 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            flex-direction: column;
-        }
-        .dashboard {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            width: 80%;
-            max-width: 600px;
-        }
-        .card {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .card h2 {
-            margin-bottom: 10px;
-        }
-        .buttons {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 10px;
-        }
-        .buttons button {
-            background: #007bff;
-            color: white;
-            border: none;
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        /* Video section hidden by default */
-        #videoSection {
-            display: none;
-            padding: 20px;
-            background-color: #f0f8ff;
-            width: 100%;
-            max-width: 1200px;
-            margin-top: 20px;
-        }
-        .video-section {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            padding: 20px;
-        }
-        .video-card {
-            width: 300px;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            background-color: #fff;
-            border: 2px solid #4CAF50;
-            transition: transform 0.3s ease;
-        }
-        .video-card:hover {
-            transform: scale(1.05);
-        }
-        .video-card iframe {
-            width: 100%;
-            height: 200px;
-        }
-        .video-card h3 {
-            padding: 15px;
-            background-color: #ff6347;
-            color: white;
-            font-size: 1.2rem;
-            margin: 0;
-            text-align: center;
-        }
-        .video-card p {
-            padding: 10px;
-            font-size: 1rem;
-            color: #555;
-            background-color: #f9f9f9;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard</title>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding-bottom: 100px;
+    }
+    .dashboard {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      width: 80%;
+      max-width: 600px;
+      margin-top: 40px;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .card h2 {
+      margin-bottom: 10px;
+    }
+    .buttons {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 10px;
+    }
+    .buttons button {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    /* Video section hidden by default */
+    #videoSection {
+      display: none;
+      padding: 20px;
+      background-color: #f0f8ff;
+      width: 100%;
+      max-width: 1200px;
+      margin-top: 20px;
+    }
+
+    .video-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .video-card {
+      width: 300px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+      border: 2px solid #4CAF50;
+      transition: transform 0.3s ease;
+    }
+
+    .video-card:hover {
+      transform: scale(1.05);
+    }
+
+    .video-card iframe {
+      width: 100%;
+      height: 200px;
+    }
+
+    .video-card h3 {
+      padding: 15px;
+      background-color: #ff6347;
+      color: white;
+      font-size: 1.2rem;
+      margin: 0;
+      text-align: center;
+    }
+
+    .video-card p {
+      padding: 10px;
+      font-size: 1rem;
+      color: #555;
+      background-color: #f9f9f9;
+    }
+
+    /* Hide English Documents section by default */
+    #englishDocuments {
+      display: none;
+      padding: 2rem;
+      background-color: #f9f9f9;
+      border-radius: 12px;
+      max-width: 800px;
+      margin: 2rem auto;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      font-family: 'Segoe UI', sans-serif;
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Dashboard Section -->
-    <div class="dashboard">
-        <div class="card">
-            <h2>English</h2>
-            <div class="buttons">
-                <button><i class="fas fa-video"></i> Videos</button>
-                <button><i class="fas fa-question-circle"></i> Quizzes</button>
-                <button><i class="fas fa-file"></i> Documents</button>
-            </div>
-        </div>
-        <div class="card">
-            <h2>Maths</h2>
-            <div class="buttons">
-                <button><i class="fas fa-video"></i> Videos</button>
-                <button><i class="fas fa-question-circle"></i> Quizzes</button>
-                <button><i class="fas fa-file"></i> Documents</button>
-            </div>
-        </div>
-        <div class="card">
-            <h2>Science</h2>
-            <div class="buttons">
-                <button id="showVideosBtn"><i class="fas fa-video"></i> Videos</button>
-                <button><i class="fas fa-question-circle"></i> Quizzes</button>
-                <button><i class="fas fa-file"></i> Documents</button>
-            </div>
-        </div>
-        <div class="card">
-            <h2>Biology</h2>
-            <div class="buttons">
-                <button><i class="fas fa-video"></i> Videos</button>
-                <button><i class="fas fa-question-circle"></i> Quizzes</button>
-                <button><i class="fas fa-file"></i> Documents</button>
-            </div>
-        </div>
+  <!-- Dashboard Section -->
+  <div class="dashboard">
+    <div class="card">
+      <h2>English</h2>
+      <div class="buttons">
+        <button><i class="fas fa-video"></i> Videos</button>
+        <button><i class="fas fa-question-circle"></i> Quizzes</button>
+        <button id="englishDocBtn"><i class="fas fa-file"></i> Documents</button>
+      </div>
     </div>
-
-    <!-- Video Section (Initially Hidden) -->
-    <div id="videoSection">
-        <header>
-            <strong><em>PHYSICS MADE EASY</em></strong>
-            <div class="author">
-                <strong><em>BY PASCAL MR DISTINCTIONS</em></strong>
-            </div>
-        </header>
-
-        <section class="video-section">
-            <div class="video-card">
-                <h3>Introduction to Physics</h3>
-                <iframe src="https://www.youtube.com/embed/yXtBiunZC40?si=jcjA3CzfEu0JYzix" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <p>Get started with the basics of Physics, the science of matter, motion, and energy.</p>
-            </div>
-
-            <div class="video-card">
-                <h3>Newton's Laws of Motion</h3>
-                <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <p>Learn about Newton's Three Laws of Motion, fundamental to understanding how objects move.</p>
-            </div>
-
-            <div class="video-card">
-                <h3>Energy and Work</h3>
-                <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <p>Explore the concepts of energy, work, and how they relate to the motion of objects.</p>
-            </div>
-        </section>
+    <div class="card">
+      <h2>Maths</h2>
+      <div class="buttons">
+        <button><i class="fas fa-video"></i> Videos</button>
+        <button><i class="fas fa-question-circle"></i> Quizzes</button>
+        <button><i class="fas fa-file"></i> Documents</button>
+      </div>
     </div>
+    <div class="card">
+      <h2>Science</h2>
+      <div class="buttons">
+        <button id="showVideosBtn"><i class="fas fa-video"></i> Videos</button>
+        <button><i class="fas fa-question-circle"></i> Quizzes</button>
+        <button><i class="fas fa-file"></i> Documents</button>
+      </div>
+    </div>
+    <div class="card">
+      <h2>Biology</h2>
+      <div class="buttons">
+        <button><i class="fas fa-video"></i> Videos</button>
+        <button><i class="fas fa-question-circle"></i> Quizzes</button>
+        <button><i class="fas fa-file"></i> Documents</button>
+      </div>
+    </div>
+  </div>
 
-    <script>
-        // When the Science button is clicked, show the video section
-        document.getElementById('showVideosBtn').addEventListener('click', function() {
-            document.getElementById('videoSection').style.display = 'block';
-        });
-    </script>
+  <!-- Science Video Section -->
+  <div id="videoSection">
+    <header>
+      <strong><em>PHYSICS MADE EASY</em></strong>
+      <div class="author">
+        <strong><em>BY PASCAL MR DISTINCTIONS</em></strong>
+      </div>
+    </header>
+
+    <section class="video-section">
+      <div class="video-card">
+        <h3>Introduction to Physics</h3>
+        <iframe src="https://www.youtube.com/embed/yXtBiunZC40?si=jcjA3CzfEu0JYzix" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <p>Get started with the basics of Physics, the science of matter, motion, and energy.</p>
+      </div>
+      <div class="video-card">
+        <h3>Newton's Laws of Motion</h3>
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <p>Learn about Newton's Three Laws of Motion, fundamental to understanding how objects move.</p>
+      </div>
+      <div class="video-card">
+        <h3>Energy and Work</h3>
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <p>Explore the concepts of energy, work, and how they relate to the motion of objects.</p>
+      </div>
+    </section>
+  </div>
+
+  <!-- English Documents Section (Initially Hidden) -->
+  <section id="englishDocuments">
+    <h2 style="text-align: center; color: #333; font-size: 2rem; margin-bottom: 1rem;">Documents</h2>
+    
+    <div style="background-color: #fff; padding: 1rem; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.05);">
+      <h3 style="color: #007BFF; font-size: 1.2rem; margin-bottom: 1rem;">English Preposition</h3>
+      <iframe 
+        src="https://drive.google.com/file/d/1Pe0Y4McAVUCMeWFmKMWr1tocf9d7C5uT/preview" 
+        width="100%" 
+        height="480" 
+        allow="autoplay">
+      </iframe>
+    </div>
+  </section>
+
+  <!-- Scripts -->
+  <script>
+    // Show science video section
+    document.getElementById('showVideosBtn').addEventListener('click', function () {
+      document.getElementById('videoSection').style.display = 'block';
+    });
+
+    // Show English documents section on button click
+    document.getElementById('englishDocBtn').addEventListener('click', function () {
+      const docSection = document.getElementById('englishDocuments');
+      docSection.style.display = 'block';
+      docSection.scrollIntoView({ behavior: 'smooth' });
+    });
+  </script>
+
 </body>
 </html>
