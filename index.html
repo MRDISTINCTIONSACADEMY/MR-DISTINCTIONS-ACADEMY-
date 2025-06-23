@@ -10,6 +10,7 @@
       const password = prompt("Enter password:");
       if (password === "Pascal Kunda") {
         alert("Access granted! Welcome.");
+        window.location.href = "dashboard.html"; // ✅ Redirects to the dashboard
       } else {
         alert("Incorrect password. Access denied.");
       }
